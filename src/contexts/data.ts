@@ -20,6 +20,8 @@ export interface ITransactionContextType {
   transactions: ITransaction[]
   fetchTransactions: (query?: string) => Promise<void>
   createTransaction: (data: ICreateTransactionInput) => Promise<void>
+  changeModalView: () => void
+  modalOpen: boolean
 }
 
 export interface ITransactionsProviderProps {

@@ -7,6 +7,8 @@ import {ICreateTransactionInput, ITransaction, ITransactionContextType, ITransac
 export const TransactionsContext = createContext({} as ITransactionContextType)
 
 export function TransactionsProvider({children}: ITransactionsProviderProps) {
+  const [modalOpen, setModalOpen] = useState(false)
+
   const [transactions, setTransactions] = useState<ITransaction[]>([])
 
   const fetchTransactions = useCallback(async (query?: string) => {
@@ -35,6 +37,10 @@ export function TransactionsProvider({children}: ITransactionsProviderProps) {
     setTransactions((state) => [response.data, ...state])
   }, [])
 
+  const changeModalView = () => {
+    setModalOpen(!modalOpen)
+  }
+
   useEffect(() => {
     fetchTransactions()
   }, [fetchTransactions])
@@ -45,6 +51,8 @@ export function TransactionsProvider({children}: ITransactionsProviderProps) {
         transactions,
         fetchTransactions,
         createTransaction,
+        changeModalView,
+        modalOpen,
       }}
     >
       {children}
