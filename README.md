@@ -17,7 +17,8 @@ Organize finances, to register transactions such as inputs and outputs, being ab
 <br>
 
 <p align="center">
-  <img src="docs/assets/preview.gif" alt="" >
+  <img src="docs/assets/screenshot-one.png" width="45%" alt="" />
+  <img src="docs/assets/screenshot-two.png" width="45%" alt="" />
 </p>
 
 ## 📦 Tech Stack
